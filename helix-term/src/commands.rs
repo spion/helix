@@ -4194,6 +4194,14 @@ pub mod insert {
 
         if matches!(
             cx.editor.config().smart_tab,
+            Some(SmartTabConfig { accept_inline_completion: true, .. })
+        ) && doc.inline_completions.current().is_some() {
+            inline_completion_accept(cx);
+            return;
+        }
+
+        if matches!(
+            cx.editor.config().smart_tab,
             Some(SmartTabConfig { enable: true, .. })
         ) {
             let cursors_after_whitespace = doc.selection(view_id).ranges().iter().all(|range| {
