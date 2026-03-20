@@ -310,6 +310,7 @@ pub enum LanguageServerFeature {
     DocumentHighlight,
     Completion,
     CodeAction,
+    DocumentLinks,
     WorkspaceCommand,
     DocumentSymbols,
     WorkspaceSymbols,
@@ -320,6 +321,7 @@ pub enum LanguageServerFeature {
     InlayHints,
     DocumentColors,
     InlineCompletion,
+    CallHierarchy,
 }
 
 impl Display for LanguageServerFeature {
@@ -337,6 +339,7 @@ impl Display for LanguageServerFeature {
             DocumentHighlight => "document-highlight",
             Completion => "completion",
             CodeAction => "code-action",
+            DocumentLinks => "document-links",
             WorkspaceCommand => "workspace-command",
             DocumentSymbols => "document-symbols",
             WorkspaceSymbols => "workspace-symbols",
@@ -346,6 +349,7 @@ impl Display for LanguageServerFeature {
             InlayHints => "inlay-hints",
             DocumentColors => "document-colors",
             InlineCompletion => "inline-completion",
+            CallHierarchy => "call-hierarchy",
         };
         write!(f, "{feature}",)
     }
